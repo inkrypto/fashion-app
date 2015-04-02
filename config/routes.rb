@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
 
-  get '/fashions' => 'fashions#index'
-  get '/fashions/:id'  => 'fashions#show', :as => :fashion #name_route
-  post '/fashions' => 'fashions#create'
+  root 'pages#index'
 
-end
+  namespace :api do
+      namespace :v1 do
+        get '/fashions' => 'fashions#index'
+        get '/fashions/:id' => 'fashions#show', :as => :employee
+        post '/fashions' => 'fashions#create'
+      end
+    end
+  end

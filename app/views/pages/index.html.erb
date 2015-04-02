@@ -1,0 +1,28 @@
+<h1>Welcome to AngularJS!</h1>
+<div ng-app="app">
+{{ 1 + 1 }}
+
+    <div ng-controller="fashionCtrl" ng-init="fetchData()">
+      <div ng-repeat="fashion in fashions">
+        <h3 ng-click="show=!show">{{ fashion.id }}</h3>
+        <div ng-show="!show">
+          <p>{{ fashion.hacker }}</p>
+          <p>{{ fashion.dress }}</p>
+          <p>{{ fashion.skirt }}</p>
+          <p>{{ fashion.say }}</p>
+          <p>{{ fashion.shirt }}</p>
+          <hr>  
+        </div>
+      </div>
+
+        <div id="form">
+          <div id="errors">
+            <p ng-repeat="error in errors">{{ error }}</p>
+              Dress: <input ng-model="newDress">
+              Shirt: <input ng-model="newShirt">
+              <button ng-click="addFashion(newDress, newShirt)">Add Fashions</button>
+            </div>
+
+    </div>
+  </div>
+</div>
